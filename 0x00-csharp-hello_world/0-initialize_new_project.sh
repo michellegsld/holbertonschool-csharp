@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-dotnet new console -n 0-new_project
+# dotnet new <TEMPLATE> (in this case a console application) -o <NAME>
+dotnet new console -o 0-new_project
