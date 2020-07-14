@@ -11,7 +11,7 @@ namespace _5_print_comb
             {
                 if (num != 99)
                 {
-                    Console.Write($"{num}, ");
+                    Console.Write("{0:00}, ", num);
                 }
                 else
                 {
