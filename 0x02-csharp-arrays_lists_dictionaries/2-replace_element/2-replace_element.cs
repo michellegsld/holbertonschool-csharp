@@ -2,16 +2,16 @@
 
 class Array
 {
-    public static int elementAt(int[] array, int index)
+    public static int[] ReplaceElement(int[] array, int index, int n)
     {
         if (index >= array.Length || index < 0)
         {
             Console.WriteLine("Index out of range");
-            return (-1);
+            return (array);
         }
 
         array.SetValue(n, index);
 
-        return array[index];
+        return array;
     }
 }
