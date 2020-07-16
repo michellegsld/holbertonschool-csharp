@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 class List
 {
     public static List<int> CreatePrint(int size)
     {
-        List<int> new_list;
+        List<int> newList = new List<int>();
 
         if (size < 0)
         {
@@ -13,8 +14,10 @@ class List
         }
 
         for (int i = 0; i < size; i++)
-            new_list.Insert(i, i);
+            newList.Add(i);
 
-        return new_list;
+        Console.WriteLine("{0}", string.Join(" ", newList));
+
+        return newList;
     }
 }
