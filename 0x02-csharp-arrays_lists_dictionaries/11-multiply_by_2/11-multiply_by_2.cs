@@ -7,7 +7,7 @@ class Dictionary
     {
         Dictionary<string, int> newDict = new Dictionary<string, int>();
 
-        foreach(KeyValuePair<string, string> item in myDict)
+        foreach(KeyValuePair<string, int> item in myDict)
             newDict[item.Key] = item.Value * 2;
 
         return newDict;
