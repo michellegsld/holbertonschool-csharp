@@ -10,7 +10,7 @@ class Array
             return (-1);
         }
 
-        array[index] = n;
+        array.SetValue(n, index);
 
         return array[index];
     }
