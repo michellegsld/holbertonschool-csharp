@@ -10,4 +10,3 @@ class Dictionary
         return myDict;
     }
 }
-
