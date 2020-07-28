@@ -8,9 +8,9 @@ class LList
         var currentNode = myLList.First;
         for (; currentNode != null; currentNode = currentNode.Next)
         {
-            if (n < currentNode.Value)
+            if (n > currentNode.Value)
             {
-                myLList.AddBefore(currentNode, n);
+                myLList.AddAfter(currentNode, n);
                 break;
             }
         }
