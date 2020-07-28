@@ -7,7 +7,7 @@ class LList
     {
         if (myLList.Count > 0)
         {
-            int value = myLList.First;
+            int value = myLList.First.Value;
             myLList.RemoveFirst();
             return value;
         }
