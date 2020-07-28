@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class LList
 {
-    public static int GetNode(LinkedList<int> myLList, int n)
+    public static int Sum(LinkedList<int> myLList)
     {
         int total = 0;
 
