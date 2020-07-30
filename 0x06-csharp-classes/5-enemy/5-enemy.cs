@@ -57,10 +57,10 @@ namespace Enemies
         /// <summary>
         /// Public .toString() override to print Zombie object's attributes to stdout
         /// </summary>
-        /// <returns>A string with a format of Zombie name: _name_ / Total Health: _health_ </returns>
+        /// <returns>A string with a format of Zombie Name: _name_ / Total Health: _health_ </returns>
         public override string ToString()
         {
-            return "Zombie name: " + name + " / Total Health: " + health;
+            return "Zombie Name: " + name + " / Total Health: " + health;
         }
     }
 }
