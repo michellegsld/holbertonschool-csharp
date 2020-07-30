@@ -10,7 +10,7 @@ namespace Enemies
         /// <summary>
         /// A public field that is an int with no value.
         /// </summary>
-        int health;
+        public int health;
 
         /// <summary>
         /// A public constructor that sets the value of health to 0.
