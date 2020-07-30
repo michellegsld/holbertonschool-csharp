@@ -19,9 +19,9 @@ namespace Enemies
         public Zombie() => health = 0;
 
         /// <summary>
-        /// A public constructor that throws an error if value < 0.
+        /// A public constructor that throws an error if value less than 0.
         /// </summary>
-        /// <param name="value">Must be greater than or equal to 0.</param>
+        /// <param name="value">Must be greater than or equal to zero.</param>
         public Zombie(int value)
         {
             if (value < 0)
