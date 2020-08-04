@@ -3,7 +3,7 @@ using MyMath;
 
 namespace MyMath.Tests
 {
-    [TextFixture]
+    [TestFixture]
     public class Tests
     {
         [SetUp]
@@ -14,21 +14,21 @@ namespace MyMath.Tests
         [Test]
         public void Test_AddPositives()
         {
-            result = Add(1, 2);
+            int result = Operations.Add(1, 2);
             Assert.AreEqual(result, 3);
         }
 
         [Test]
         public void Test_AddNegatives()
         {
-            result = Add(-1, -2);
+            int result = Operations.Add(-1, -2);
             Assert.AreEqual(result, -3);
         }
 
         [Test]
         public void Test_AddZeros()
         {
-            result = Add(0, 0);
+            int result = Operations.Add(0, 0);
             Assert.AreEqual(result, 0);
         }
     }
