@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using MyMath;
 
 namespace MyMath.Tests
 {
@@ -17,12 +18,14 @@ namespace MyMath.Tests
             Assert.AreEqual(result, 3);
         }
 
+        [TestMethod]
         public void Test_AddNegatives()
         {
             result = Add(-1, -2);
             Assert.AreEqual(result, -3);
         }
 
+        [TestMethod]
         public void Test_AddZeros()
         {
             result = Add(0, 0);
