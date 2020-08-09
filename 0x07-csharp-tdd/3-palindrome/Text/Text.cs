@@ -23,8 +23,6 @@ namespace Text
 
             s = Regex.Replace(s, "[^a-zA-Z]", "");
 
-            Console.WriteLine(s);
-
             char[] sArray = s.ToCharArray();
             Array.Reverse(sArray);
 
