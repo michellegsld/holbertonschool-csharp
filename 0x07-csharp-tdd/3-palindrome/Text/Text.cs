@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Text
 {
@@ -15,14 +17,21 @@ namespace Text
         public static bool IsPalindrome(string s)
         {
             if (s.Length == 0)
-                return (True);
+                return (true);
 
-            var stringLetters = new String((s.ToLower()).Where(Char.IsLetter).ToArray());
+            s = s.ToLower();
 
-            if (stringLetters == stringLetters.Reverse())
-                return (True);
+            s = Regex.Replace(s, "[^a-zA-Z]", "");
 
-            return (False);
+            Console.WriteLine(s);
+
+            char[] sArray = s.ToCharArray();
+            Array.Reverse(sArray);
+
+            if (s == new string(sArray))
+                return (true);
+
+            return (false);
         }
     }
 }
