@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MyMath
 {
@@ -16,7 +17,7 @@ namespace MyMath
         {
             int maxInt;
 
-            if (list.Count == 0)
+            if (nums.Count == 0)
                 return (0);
             else
                 maxInt = nums[0];
