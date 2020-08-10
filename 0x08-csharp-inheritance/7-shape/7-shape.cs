@@ -17,7 +17,7 @@ class Shape
 }
 
 /// <summary>
-/// A class that inherits from Shape with two private fields and two public properties.
+/// A class that inherits from Shape.
 /// </summary>
 class Rectangle : Shape
 {
