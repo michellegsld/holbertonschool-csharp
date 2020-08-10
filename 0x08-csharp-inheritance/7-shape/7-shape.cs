@@ -75,5 +75,3 @@ class Rectangle : Shape
         return ("[Rectangle] " + width + " / " + height);
     }
 }
-
-
