@@ -23,8 +23,8 @@ class ImageProcessor
             Bitmap inverted = new Bitmap(filename);
 
             Rectangle rect = new Rectangle(0, 0, inverted.Width, inverted.Height);
-            System.Drawing.Imaging.BitmapData invertedData =
-                inverted.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
+            BitmapData invertedData =
+                inverted.LockBits(rect, ImageLockMode.ReadWrite,
                 inverted.PixelFormat);
 
             IntPtr ptr = invertedData.Scan0;
@@ -60,8 +60,8 @@ class ImageProcessor
             Bitmap grayscale = new Bitmap(filename);
 
             Rectangle rect = new Rectangle(0, 0, grayscale.Width, grayscale.Height);
-            System.Drawing.Imaging.BitmapData grayscaleData =
-                grayscale.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
+            BitmapData grayscaleData =
+                grayscale.LockBits(rect, ImageLockMode.ReadWrite,
                 grayscale.PixelFormat);
 
             IntPtr ptr = grayscaleData.Scan0;
@@ -101,8 +101,8 @@ class ImageProcessor
             Bitmap blackwhite = new Bitmap(filename);
 
             Rectangle rect = new Rectangle(0, 0, blackwhite.Width, blackwhite.Height);
-            System.Drawing.Imaging.BitmapData blackwhiteData =
-                blackwhite.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
+            BitmapData blackwhiteData =
+                blackwhite.LockBits(rect, ImageLockMode.ReadWrite,
                 blackwhite.PixelFormat);
 
             IntPtr ptr = blackwhiteData.Scan0;
