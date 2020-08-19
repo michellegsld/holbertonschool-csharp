@@ -90,7 +90,8 @@ class ImageProcessor
     /// Public class to turn an image into black and white
     /// </summary>
     /// <param name="filenames">List of image locations to edit</param>
-    public static void BlackWhite(string[] filenames)
+    /// <param name="threshold">The limit for when something should be black vs white</param>
+    public static void BlackWhite(string[] filenames, double threshold)
     {
         Parallel.ForEach(filenames, filename =>
         {
@@ -113,7 +114,7 @@ class ImageProcessor
 
             for (int i = 0; i < rgbValues.Length - 3; i += 3)
             {
-                if ((rgbValues[i] + rgbValues[i + 1] + rgbValues[i + 2]) / 3) > 128)
+                if (rgbValues[i] + rgbValues[i + 1] + rgbValues[i + 2] > threshold)
                     rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = (byte)(255);
                 else
                     rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = (byte)(0);
