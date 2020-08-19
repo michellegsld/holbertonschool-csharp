@@ -24,8 +24,8 @@ class ImageProcessor
 
             Rectangle rect = new Rectangle(0, 0, inverted.Width, inverted.Height);
             System.Drawing.Imaging.BitmapData invertedData =
-             inverted.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
-             inverted.PixelFormat);
+                inverted.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
+                inverted.PixelFormat);
 
             IntPtr ptr = invertedData.Scan0;
 
