@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ class ImageProcessor
             int x = 0;
             int y = 0;
 
-            string file = filename.Substring(7, filename.Length - 11);
+            string file = Path.GetFileNameWithoutExtension(filename);
+            string extension = Path.GetExtension(filename);
 
             Bitmap inverted = new Bitmap(filename);
 
@@ -26,7 +28,7 @@ class ImageProcessor
                 }
             }
 
-            inverted.Save(file + "_inverted.jpg");
+            inverted.Save(file + "_inverted" + extension);
         }
         );
     }
