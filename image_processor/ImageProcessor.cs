@@ -81,7 +81,7 @@ class ImageProcessor
 
             inverted.UnlockBits(invertedData);
 
-            inverted.Save(file + "_inverse" + extension);
+            inverted.Save(file + "_grayscale" + extension);
         }
         );
     }
