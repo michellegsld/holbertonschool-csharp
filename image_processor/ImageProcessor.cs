@@ -115,9 +115,9 @@ class ImageProcessor
             for (int i = 0; i < rgbValues.Length - 3; i += 3)
             {
                 if (rgbValues[i] + rgbValues[i + 1] + rgbValues[i + 2] > threshold)
-                    rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = (byte)(255);
+                    rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = 255;
                 else
-                    rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = (byte)(0);
+                    rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = 0;
             }
 
             System.Runtime.InteropServices.Marshal.Copy(rgbValues, 0, ptr, bytes);
