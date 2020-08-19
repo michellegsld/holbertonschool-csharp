@@ -5,7 +5,7 @@ using System.Drawing.Imaging;
 using System.Threading.Tasks;
 
 /// <summary>
-/// Class
+/// Class containing method on editing an image
 /// </summary>
 class ImageProcessor
 {
@@ -41,7 +41,7 @@ class ImageProcessor
 
             inverted.UnlockBits(invertedData);
 
-            inverted.Save(file + "_inverted" + extension);
+            inverted.Save(file + "_inverse" + extension);
         }
         );
     }
