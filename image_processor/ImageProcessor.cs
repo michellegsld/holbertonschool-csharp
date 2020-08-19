@@ -12,7 +12,7 @@ class ImageProcessor
     /// <summary>
     /// Public class to invert an image
     /// </summary>
-    /// <param name="filenames">List of image locations to invert</param>
+    /// <param name="filenames">List of image locations to edit</param>
     public static void Inverse(string[] filenames)
     {
         Parallel.ForEach(filenames, filename =>
@@ -49,7 +49,7 @@ class ImageProcessor
     /// <summary>
     /// Public class to turn an image into grayscale
     /// </summary>
-    /// <param name="filenames">List of image locations to invert</param>
+    /// <param name="filenames">List of image locations to edit</param>
     public static void Grayscale(string[] filenames)
     {
         Parallel.ForEach(filenames, filename =>
@@ -82,6 +82,72 @@ class ImageProcessor
             grayscale.UnlockBits(grayscaleData);
 
             grayscale.Save(file + "_grayscale" + extension);
+        }
+        );
+    }
+
+    /// <summary>
+    /// Public class to turn an image into black and white
+    /// </summary>
+    /// <param name="filenames">List of image locations to edit</param>
+    public static void BlackWhite(string[] filenames)
+    {
+        Parallel.ForEach(filenames, filename =>
+        {
+            string file = Path.GetFileNameWithoutExtension(filename);
+            string extension = Path.GetExtension(filename);
+
+            Bitmap blackwhite = new Bitmap(filename);
+
+            Rectangle rect = new Rectangle(0, 0, blackwhite.Width, blackwhite.Height);
+            System.Drawing.Imaging.BitmapData blackwhiteData =
+                blackwhite.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
+                blackwhite.PixelFormat);
+
+            IntPtr ptr = blackwhiteData.Scan0;
+
+            int bytes = Math.Abs(blackwhiteData.Stride) * blackwhite.Height;
+            byte[] rgbValues = new byte[bytes];
+
+            System.Runtime.InteropServices.Marshal.Copy(ptr, rgbValues, 0, bytes);
+
+            for (int i = 0; i < rgbValues.Length - 3; i += 3)
+            {
+                byte color = (byte)((rgbValues[i] + rgbValues[i + 1] + rgbValues[i + 2]) / 3);
+                if ((int)(color) > 128)
+                    rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = (byte)(255);
+                else
+                    rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = (byte)(0);
+            }
+
+            System.Runtime.InteropServices.Marshal.Copy(rgbValues, 0, ptr, bytes);
+
+            blackwhite.UnlockBits(blackwhiteData);
+
+            blackwhite.Save(file + "_bw" + extension);
+        }
+        );
+    }
+
+    /// <summary>
+    /// Public class to turn an image into a thumbnail
+    /// </summary>
+    /// <param name="filenames">List of image locations to edit</param>
+    /// <param name="height">The new height of the thumbnail</param>
+    public static void Thumbnail(string[] filenames, int height)
+    {
+        Parallel.ForEach(filenames, filename =>
+        {
+            string file = Path.GetFileNameWithoutExtension(filename);
+            string extension = Path.GetExtension(filename);
+
+            Bitmap original = new Bitmap(filename);
+
+            int width = (height * original.Width) / original.Height;
+
+            Image thumbnail = original.GetThumbnailImage(width, height, null, IntPtr.Zero);
+
+            thumbnail.Save(file + "_th" + extension);
         }
         );
     }
