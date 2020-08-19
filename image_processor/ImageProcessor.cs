@@ -57,16 +57,16 @@ class ImageProcessor
             string file = Path.GetFileNameWithoutExtension(filename);
             string extension = Path.GetExtension(filename);
 
-            Bitmap inverted = new Bitmap(filename);
+            Bitmap grayscale = new Bitmap(filename);
 
-            Rectangle rect = new Rectangle(0, 0, inverted.Width, inverted.Height);
-            System.Drawing.Imaging.BitmapData invertedData =
-                inverted.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
-                inverted.PixelFormat);
+            Rectangle rect = new Rectangle(0, 0, grayscale.Width, grayscale.Height);
+            System.Drawing.Imaging.BitmapData grayscaleData =
+                grayscale.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
+                grayscale.PixelFormat);
 
-            IntPtr ptr = invertedData.Scan0;
+            IntPtr ptr = grayscaleData.Scan0;
 
-            int bytes = Math.Abs(invertedData.Stride) * inverted.Height;
+            int bytes = Math.Abs(grayscaleData.Stride) * grayscale.Height;
             byte[] rgbValues = new byte[bytes];
 
             System.Runtime.InteropServices.Marshal.Copy(ptr, rgbValues, 0, bytes);
@@ -79,9 +79,9 @@ class ImageProcessor
 
             System.Runtime.InteropServices.Marshal.Copy(rgbValues, 0, ptr, bytes);
 
-            inverted.UnlockBits(invertedData);
+            grayscale.UnlockBits(grayscaleData);
 
-            inverted.Save(file + "_grayscale" + extension);
+            grayscale.Save(file + "_grayscale" + extension);
         }
         );
     }
