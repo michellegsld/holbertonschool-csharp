@@ -113,8 +113,7 @@ class ImageProcessor
 
             for (int i = 0; i < rgbValues.Length - 3; i += 3)
             {
-                byte color = (byte)((rgbValues[i] + rgbValues[i + 1] + rgbValues[i + 2]) / 3);
-                if ((int)(color) > 128)
+                if ((rgbValues[i] + rgbValues[i + 1] + rgbValues[i + 2]) / 3) > 128)
                     rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = (byte)(255);
                 else
                     rgbValues[i] = rgbValues[i + 1] = rgbValues[i + 2] = (byte)(0);
