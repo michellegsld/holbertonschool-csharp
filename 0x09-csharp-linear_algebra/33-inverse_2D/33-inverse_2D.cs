@@ -23,6 +23,9 @@ class MatrixMath
         double d = matrix[1, 1];
         double determinant = a * d - b * c;
 
+        if (determinant == 0)
+            return (fail);
+
         double[,] inverse = new double[2, 2];
 
         inverse[0, 0] = d / determinant;
