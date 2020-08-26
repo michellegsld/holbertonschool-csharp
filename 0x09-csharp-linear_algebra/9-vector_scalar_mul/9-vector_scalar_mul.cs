@@ -3,7 +3,7 @@
 /// <summary>
 /// A class containing a public method reguarding vector and scalars
 /// </summary>
-class Program
+class VectorMath
 {
     /// <summary>
     /// Multiplies a vector by a scalar
