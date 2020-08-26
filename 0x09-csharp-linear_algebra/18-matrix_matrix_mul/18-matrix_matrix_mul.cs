@@ -15,7 +15,7 @@ class MatrixMath
     {
         double[,] fail = { { -1 } };
 
-        if (matrix1.GetLength(0) != matrix2.GetLength(1))
+        if (matrix1.GetLength(1) != matrix2.GetLength(0))
             return (fail);
 
         double[,] total = new double[matrix1.GetLength(0), matrix2.GetLength(1)];
@@ -40,6 +40,6 @@ class MatrixMath
 // Since i can't work with j and same vice versa, need another variable
 // (this is because the way matrices are being looped through are different)
 //    int k can represent position from start to end in current row/column
-// So need final loop from 0 to GetLength(1) of matrix as is same as GetLength(0) of matrix 2
+// So need final loop from 0 to GetLength(1) of matrix1 as is same as GetLength(0) of matrix2
 // (as number of rows in matrix1 must be equal to number of column in matrix2)=
 // Then set the new matrix position at [i, j] AFTER adding the current positions in matrix1 and matrix2
