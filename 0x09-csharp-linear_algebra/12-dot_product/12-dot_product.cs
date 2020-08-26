@@ -21,7 +21,7 @@ class VectorMath
 
         double sum = 0;
 
-        for (int i = 0; i < vector1.GetLength(0))
+        for (int i = 0; i < vector1.GetLength(0); i++)
             sum += vector1[i] * vector2[i];
 
         return (sum);
