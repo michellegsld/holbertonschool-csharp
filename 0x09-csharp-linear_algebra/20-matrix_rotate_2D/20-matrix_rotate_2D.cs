@@ -28,7 +28,7 @@ class MatrixMath
         double cos = Math.Cos(angle);
         double sin = Math.Sin(angle);
 
-        if (angle > 0)
+        if (angle >= 0)
         {
             total[0, 0] = Math.Round((x1 * cos), 2) - Math.Round((y1 * sin), 2);
             total[0, 1] = Math.Round((x1 * sin), 2) + Math.Round((y1 * cos), 2);
