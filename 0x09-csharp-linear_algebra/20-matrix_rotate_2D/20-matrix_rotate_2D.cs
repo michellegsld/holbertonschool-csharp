@@ -28,10 +28,20 @@ class MatrixMath
         double cos = Math.Cos(angle);
         double sin = Math.Sin(angle);
 
-        total[0, 0] = Math.Round((x1 * cos), 2) - Math.Round((y1 * sin), 2);
-        total[0, 1] = Math.Round((x1 * sin), 2) + Math.Round((y1 * cos), 2);
-        total[1, 0] = Math.Round((x2 * cos), 2) - Math.Round((y2 * sin), 2);
-        total[1, 1] = Math.Round((x2 * sin), 2) + Math.Round((y2 * cos), 2);
+        if (angle > 0)
+        {
+            total[0, 0] = Math.Round((x1 * cos), 2) - Math.Round((y1 * sin), 2);
+            total[0, 1] = Math.Round((x1 * sin), 2) + Math.Round((y1 * cos), 2);
+            total[1, 0] = Math.Round((x2 * cos), 2) - Math.Round((y2 * sin), 2);
+            total[1, 1] = Math.Round((x2 * sin), 2) + Math.Round((y2 * cos), 2);
+        }
+        else
+        {
+            total[0, 0] = Math.Round((x1 * cos), 2) + Math.Round((y1 * sin), 2);
+            total[0, 1] = Math.Round((x1 * -1 * sin), 2) + Math.Round((y1 * cos), 2);
+            total[1, 0] = Math.Round((x2 * cos), 2) + Math.Round((y2 * sin), 2);
+            total[1, 1] = Math.Round((x2 * -1 * sin), 2) + Math.Round((y2 * cos), 2);
+        }
 
         return (total);
     }
