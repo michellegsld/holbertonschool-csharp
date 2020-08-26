@@ -10,7 +10,7 @@ class Program
     /// </summary>
     /// <param name="vector">The vector to be multiplied</param>
     /// <param name="scalar">The scalar to multiply the vector by</param>
-    /// <returns></returns>
+    /// <returns>Either the vector * scalar or -1</returns>
     public static double[] Multiply(double[] vector, double scalar)
     {
         double[] fail = {-1};
