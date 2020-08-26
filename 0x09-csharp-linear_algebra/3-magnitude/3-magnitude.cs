@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Math;
 
 /// <summary>
 /// A class containing a public method reguarding vectors
@@ -16,11 +15,11 @@ class VectorMath
         if (vector.GetLength(0) != 2 && vector.GetLength(0) != 3)
             return (-1);
 
-        int sum = 0;
+        double sum = 0.0;
 
         foreach (int num in vector)
-            sum += Pow(num, 2.0);
+            sum += Math.Pow(num, 2.0);
 
-        return (Round(Sqrt(sum), 2));
+        return (Math.Round(Math.Sqrt(sum), 2));
     }
 }
