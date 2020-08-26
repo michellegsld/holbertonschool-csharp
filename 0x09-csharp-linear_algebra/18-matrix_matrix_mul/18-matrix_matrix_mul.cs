@@ -23,7 +23,7 @@ class MatrixMath
         for (int i = 0; i < matrix1.GetLength(0); i++)
             for (int j = 0; j < matrix2.GetLength(1); j++)
                 for (int k = 0; k < matrix1.GetLength(1); k++)
-                    total[i, j] = matrix1[i, k] * matrix2[k, j];
+                    total[i, j] += matrix1[i, k] * matrix2[k, j];
 
         return (total);
     }
@@ -41,4 +41,5 @@ class MatrixMath
 // (this is because the way matrices are being looped through are different)
 //    int k can represent position from start to end in current row/column
 // So need final loop from 0 to GetLength(1) of matrix as is same as GetLength(0) of matrix 2
-// (as number of rows in matrix1 must be equal to number of column in matrix2)
+// (as number of rows in matrix1 must be equal to number of column in matrix2)=
+// Then set the new matrix position at [i, j] AFTER adding the current positions in matrix1 and matrix2
