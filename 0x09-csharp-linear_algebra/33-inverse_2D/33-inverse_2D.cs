@@ -28,10 +28,10 @@ class MatrixMath
 
         double[,] inverse = new double[2, 2];
 
-        inverse[0, 0] = d / determinant;
-        inverse[0, 1] = b / determinant;
-        inverse[1, 0] = c / determinant;
-        inverse[1, 1] = a / determinant;
+        inverse[0, 0] = Math.Round(d / determinant, 2);
+        inverse[0, 1] = Math.Round(b / determinant, 2);
+        inverse[1, 0] = Math.Round(c / determinant, 2);
+        inverse[1, 1] = Math.Round(a / determinant, 2);
 
         return (inverse);
     }
