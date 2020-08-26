@@ -12,6 +12,8 @@ class MatrixMath
     /// <returns>The determinant or -1</returns>
     public static double Determinant(double[,] matrix)
     {
+        if (matrix == null || matrix.GetLength(0) == 0 || matrix.GetLength(1) == 0)
+            return (-1);
         if (matrix.GetLength(0) != matrix.GetLength(1))
             return (-1);
         if (matrix.GetLength(0) != 2 && matrix.GetLength(0) != 3)
