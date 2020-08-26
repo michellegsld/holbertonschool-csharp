@@ -28,7 +28,7 @@ class MatrixMath
         {
             total[0, 0] = matrix[0, 0] + factor * matrix[0, 1];
             total[0, 1] = matrix[0, 1];
-            total[1, 0] = matrix[1, 0] + factor * matrix[0, 1];
+            total[1, 0] = matrix[1, 0] + factor * matrix[1, 1];
             total[1, 1] = matrix[1, 1];
         }
         else
