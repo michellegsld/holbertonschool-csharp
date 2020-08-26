@@ -15,6 +15,9 @@ class MatrixMath
     {
         double[,] fail = { { -1 } };
 
+        if (matrix == null || matrix.GetLength(0) == 0 || matrix.GetLength(1) == 0)
+            return (fail);
+
         if (matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
             return (fail);
 
