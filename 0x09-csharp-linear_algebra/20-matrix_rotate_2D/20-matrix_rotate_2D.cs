@@ -25,8 +25,8 @@ class MatrixMath
         double x2 = matrix[1, 0];
         double y2 = matrix[1, 1];
 
-        double cos = Math.Round(Math.Cos(angle), 2);
-        double sin = Math.Round(Math.Sin(angle), 2);
+        double cos = Math.Cos(angle);
+        double sin = Math.Sin(angle);
 
         total[0, 0] = Math.Round((x1 * cos) - (y1 * sin), 2);
         total[0, 1] = Math.Round((x1 * sin) + (y1 * cos), 2);
