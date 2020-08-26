@@ -24,13 +24,14 @@ class MatrixMath
         double y1 = matrix[0, 1];
         double x2 = matrix[1, 0];
         double y2 = matrix[1, 1];
+
         double cos = Math.Round(Math.Cos(angle), 2);
         double sin = Math.Round(Math.Sin(angle), 2);
 
-        total[0, 0] = Math.Round(x1 * cos - y1 * sin, 2);
-        total[0, 1] = Math.Round(x1 * sin + y1 * cos, 2);
-        total[1, 0] = Math.Round(x2 * cos - y2 * sin, 2);
-        total[1, 1] = Math.Round(x2 * sin + y2 * cos, 2);
+        total[0, 0] = Math.Round((x1 * cos) - (y1 * sin), 2);
+        total[0, 1] = Math.Round((x1 * sin) + (y1 * cos), 2);
+        total[1, 0] = Math.Round((x2 * cos) - (y2 * sin), 2);
+        total[1, 1] = Math.Round((x2 * sin) + (y2 * cos), 2);
 
         return (total);
     }
