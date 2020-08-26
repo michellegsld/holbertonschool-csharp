@@ -20,10 +20,10 @@ class MatrixMath
         if (matrix.GetLength(0) == 2)
             return (matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0]);
 
-        double a = matrix[0, 0] * (matrix[1, 1] * matrix[2, 2] - matrix[1, 2] * matrix[2, 1]);
-        double b = matrix[0, 1] * (matrix[1, 0] * matrix[2, 2] - matrix[1, 2] * matrix[2, 0]);
-        double c = matrix[0, 2] * (matrix[1, 0] * matrix[2, 1] - matrix[1, 1] * matrix[2, 0]);
+        double a = matrix[1, 1] * matrix[2, 2] - matrix[1, 2] * matrix[2, 1];
+        double b = matrix[1, 0] * matrix[2, 2] - matrix[1, 2] * matrix[2, 0];
+        double c = matrix[1, 0] * matrix[2, 1] - matrix[1, 1] * matrix[2, 0];
 
-        return (a - b + c);
+        return (Math.Round(matrix[0, 0] * a - matrix[0, 1] * b + matrix[0, 2] * c, 2));
     }
 }
