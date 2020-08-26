@@ -14,7 +14,7 @@ class MatrixMath
     {
         double[,] fail = { { -1 } };
 
-        if (matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
+        if (matrix == null || matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
             return (fail);
 
         double a = matrix[0, 0];
