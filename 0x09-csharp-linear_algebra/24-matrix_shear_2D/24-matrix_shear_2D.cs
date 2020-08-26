@@ -38,4 +38,6 @@ class MatrixMath
             total[1, 0] = matrix[1, 0];
             total[1, 1] = matrix[1, 0] * factor + matrix[1, 1];
         }
+
+        return (total);
 }
