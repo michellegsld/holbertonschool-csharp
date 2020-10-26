@@ -79,7 +79,7 @@ class Queue<T>
     /// Removes the null at the head of the queue.
     /// </summary>
     /// <returns>Returns value.</returns>
-    public void Dequeue()
+    public Dequeue()
     {
         if (head == null) {
             Console.WriteLine("Queue is empty");
