@@ -36,7 +36,7 @@ class Queue<T>
         /// <summary>
         /// Can be of any type, initially set to null.
         /// </summary>
-        T value = null;
+        T value;
         /// <summary>
         /// Must be an object of type Node, initally set to null.
         /// </summary>
