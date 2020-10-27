@@ -5,6 +5,9 @@
 /// </summary>
 public abstract class Base
 {
+    /// <summary>
+    /// Public property that should be a string.
+    /// </summary>
     public string name;
 
     /// <summary>
