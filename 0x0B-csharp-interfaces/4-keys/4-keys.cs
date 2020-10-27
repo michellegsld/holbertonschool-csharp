@@ -130,7 +130,7 @@ public class Key : Base, ICollectable
             Console.WriteLine($"You pick up the {name}.");
         } else {
             isCollected = false;
-            Console.WriteLine($"You have already picked up the {name}");
+            Console.WriteLine($"You have already picked up the {name}.");
         }
     }
 }
