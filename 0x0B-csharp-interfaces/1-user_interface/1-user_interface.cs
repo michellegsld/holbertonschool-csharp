@@ -5,14 +5,10 @@
 /// </summary>
 public abstract class Base
 {
-    /// <summary>
-    /// Public property that should be a string.
-    /// </summary>
+    /// <summary> Public property that should be a string. </summary>
     public string name;
 
-    /// <summary>
-    /// Overrides the ToString() method.
-    /// </summary>
+    /// <summary> Overrides the ToString() method. </summary>
     /// <returns> A string with the set up: `name` is a `type` </returns>
     public override String ToString() {
         return $"{name} is a {this.GetType()}";
@@ -24,9 +20,7 @@ public abstract class Base
 /// </summary>
 interface IInteractive
 {
-    /// <summary>
-    /// A method that currently does nothing.
-    /// </summary>
+    /// <summary> A method that currently does nothing. </summary>
     void Interact();
 }
 
@@ -35,14 +29,10 @@ interface IInteractive
 /// </summary>
 interface IBreakable
 {
-    /// <summary>
-    /// An int property.
-    /// </summary>
-    int durability {get; set;}
+    /// <summary> An int property. </summary>
+    int durability { get; set; }
 
-    /// <summary>
-    /// A method that currently does nothing.
-    /// </summary>
+    /// <summary> A method that currently does nothing. </summary>
     void Break();
 }
 
@@ -51,14 +41,10 @@ interface IBreakable
 /// </summary>
 interface ICollectable
 {
-    /// <summary>
-    /// A boolean property.
-    /// </summary>
-    bool isCollected {get; set;}
+    /// <summary> A boolean property. </summary>
+    bool isCollected { get; set; }
 
-    /// <summary>
-    /// A method that currently does nothing.
-    /// </summary>
+    /// <summary> A method that currently does nothing. </summary>
     void Collect();
 }
 
@@ -67,5 +53,18 @@ interface ICollectable
 /// </summary>
 public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
+    /// <summary> Determines the durability of an item. </summary>
+    public int durability { get; set; }
 
+    /// <summary> Determines if the item can be collected. </summary>
+    public bool isCollected { get; set; }
+
+    /// <summary> Currently does nothing. </summary>
+    public void Interact() { }
+
+    /// <summary> Currently does nothing. </summary>
+    public void Break() { }
+
+    /// <summary> Currently does nothing. </summary>
+    public void Collect() { }
 }
