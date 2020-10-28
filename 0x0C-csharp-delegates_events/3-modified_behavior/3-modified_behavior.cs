@@ -86,5 +86,5 @@ public class Player
             return baseValue;
         else
             return baseValue * 1.5f;
-}
+    }
 }
