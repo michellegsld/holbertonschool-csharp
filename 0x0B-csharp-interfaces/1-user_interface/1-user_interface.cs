@@ -4,7 +4,7 @@
 public abstract class Base
 {
     /// <summary> Public property that should be a string. </summary>
-    string name { get; set; }
+    string name { set; get; }
 
     /// <summary> Overrides the ToString() method. </summary>
     /// <returns> A string with the set up: `name` is a `type`. </returns>
@@ -25,7 +25,7 @@ interface IInteractive
 interface IBreakable
 {
     /// <summary> An int property. </summary>
-    int durability { get; set; }
+    int durability { set; get; }
 
     /// <summary> A method that currently does nothing. </summary>
     void Break();
@@ -35,14 +35,14 @@ interface IBreakable
 interface ICollectable
 {
     /// <summary> A boolean property. </summary>
-    bool isCollected { get; set; }
+    bool isCollected { set; get; }
 
     /// <summary> A method that currently does nothing. </summary>
     void Collect();
 }
 
 /// <summary> An empty public class that inherits from all interfaces and Base class. </summary>
-public class TestObject : Base, IInteractive, IBreakable, ICollectable
+class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
     /// <summary> Determines the name of an item. </summary>
     public string name { get; set; }
