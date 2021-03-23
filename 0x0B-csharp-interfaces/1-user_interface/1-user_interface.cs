@@ -1,0 +1,58 @@
+﻿using System;
+
+/// <summary> An abstract class, contains public property name and overrides ToString(). </summary>
+public abstract class Base
+{
+    /// <summary> Public property that should be a string. </summary>
+    public string name;
+
+    /// <summary> Overrides the ToString() method. </summary>
+    /// <returns> A string with the set up: `name` is a `type`. </returns>
+    public override string ToString()
+    {
+        return $"{name} is a {this.GetType()}";
+    }
+}
+
+/// <summary> An interface called IInteractive. </summary>
+interface IInteractive
+{
+    void Interact();
+}
+
+interface IBreakable
+{
+    /// <summary> An int property. </summary>
+    int durability { set; get; }
+
+    /// <summary> A method that currently does nothing. </summary>
+    void Break();
+}
+
+interface ICollectable
+{
+    /// <summary> A boolean property. </summary>
+    bool isCollected { set; get; }
+
+    /// <summary> A method that currently does nothing. </summary>
+    void Collect();
+}
+
+/// <summary> An empty public class that inherits from all interfaces and Base class. </summary>
+public class TestObject : Base, IInteractive, IBreakable, ICollectable
+{
+/// <summary> Determines the durability of an item. </summary>
+    public int durability { get; set; }
+
+    /// <summary> Determines if the item can be collected. </summary>
+    public bool isCollected { get; set; }
+
+    /// <summary> Currently does nothing. </summary>
+    public void Interact() { }
+
+    /// <summary> Currently does nothing. </summary>
+    public void Break() { }
+
+    /// <summary> Currently does nothing. </summary>
+    public void Collect() { }
+}
