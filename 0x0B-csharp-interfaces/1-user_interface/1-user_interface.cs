@@ -42,16 +42,16 @@ interface ICollectable
 }
 
 /// <summary> An empty public class that inherits from all interfaces and Base class. </summary>
-class TestObject : Base, IInteractive, IBreakable, ICollectable
+public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
-    /// <summary> Determines the name of an item. </summary>
-    public string name { get; set; }
-
     /// <summary> Determines the durability of an item. </summary>
     public int durability { get; set; }
 
     /// <summary> Determines if the item can be collected. </summary>
     public bool isCollected { get; set; }
+
+    /// <summary> Determines the name of an item. </summary>
+    public string name { get; set; }
 
     /// <summary> Currently does nothing. </summary>
     public void Interact() { }
