@@ -4,7 +4,7 @@
 public abstract class Base
 {
     /// <summary> Public property that should be a string. </summary>
-    string name { set; get; }
+    string name { get; set; }
 
     /// <summary> Overrides the ToString() method. </summary>
     /// <returns> A string with the set up: `name` is a `type`. </returns>
@@ -25,7 +25,7 @@ interface IInteractive
 interface IBreakable
 {
     /// <summary> An int property. </summary>
-    int durability { set; get; }
+    int durability { get; set; }
 
     /// <summary> A method that currently does nothing. </summary>
     void Break();
@@ -35,7 +35,7 @@ interface IBreakable
 interface ICollectable
 {
     /// <summary> A boolean property. </summary>
-    bool isCollected { set; get; }
+    bool isCollected { get; set; }
 
     /// <summary> A method that currently does nothing. </summary>
     void Collect();
