@@ -1,0 +1,11 @@
+## README for 0x0C-csharp-delegates_events ##
+### A directory within the holbertonschool-csharp repo ###
+
+| File Name | Description |
+| --------- | ----------- |
+| 0-universal_health/ <br> 0-universal_health/0-universal_health.cs <br> 0-universal_health/0-universal_health.csproj | **Task: 0. Universal health** <br> A public class called `Player` with the properties `name`, `maxHp`, and `hp`, a constructor assigining the `name` and `maxHp`, and a method that prints the health information of a `Player`. |
+| 1-damage_delegation/ <br> 1-damage_delegation/1-damage_delegation.cs <br> 1-damage_delegation/1-damage_delegation.csproj | **Task: 1. Damage delegation** <br> Builds off the previous task with the creation of a delegate called `CalculateHealth` that takes a float amount. Two methods were also added to add changes fro when the player takes damage and heals. |
+| 2-validation/ <br> 2-validation/2-validation.cs <br> 2-validation/2-validation.csproj | **Task: 2. Validation** <br> Builds off the previous task by calculating the new value of the Player's `hp` within `TakeDamage()` and `HealDamage()`. The Player's `hp` is updated within the method `ValidateHP()`. |
+| 3-modified_behavior/ <br> 3-modified_behavior/3-modified_behavior.cs <br> 3-modified_behavior/3-modified_behavior.csproj | **Task: 3. Modified behavior** <br> Builds off the previous task by adding an enum called `Modifier` with the values `Weak`, `Base`, and `Strong` outside of the `Player` class. A delegate called `CalculateModifier` was created as well outside of the `Player` class. The method `ApplyModifier` was also created. |
+| 4-check_yourself/ <br> 4-check_yourself/4-check_yourself.cs <br> 4-check_yourself/4-check_yourself.csproj | **Task: 4. Check yourself** <br> Builds off the previous task by creating a class called `CurrentHPArgs` that inherits from `EventArgs` with the `currentHp` property and a constructor that takes a float called `newHp` and sets it as `currentHp`'s current value. A new EventHandler was added to the `Player` class as well as a new private property called `status` and a method called `CheckStatus`. |
+| 5-eventful/ <br> 5-eventful/5-eventful.cs <br> 5-eventful/5-eventful.csproj | **Task: 5. Eventful** <br> Builds off the previous task by creating new methods called `HPValueWarning` and `OnCheckStatus()` inside the `Player` class. |
