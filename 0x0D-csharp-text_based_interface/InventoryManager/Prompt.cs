@@ -17,13 +17,20 @@ public static class Prompt
 <Update [ClassName object_id]> an object
 <Delete [ClassName object_id]> an object
 <Exit>");
+        Console.WriteLine();
     }
 
-    /// <summary> To be called upon if the given ClassName is invalid. </summary>
-    /// <param name="ClassName"> The invalid ClassName given by the user. </param>
-    public static void ErrorClass(string ClassName)
+    /// <summary> To be called upon if there are no objects of that Class. </summary>
+    /// <param name="ClassName"> The ClassName given by the user. </param>
+    /// <param name="Flag"> Specifies the reason why there are no objects. </param>
+    public static void ErrorClass(string ClassName, int Flag = 0)
     {
+        Console.WriteLine($"No Results.");
+        if (Flag == 1) {
+            Console.WriteLine($"There are currently no objects of type {ClassName}");
+        } else if (Flag == 2) {
         Console.WriteLine($"{ClassName} is not a valid object type");
+        }
     }
 
     /// <summary> To be called upon if the given id is invalid. </summary>
