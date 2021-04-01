@@ -1,5 +1,5 @@
 ﻿using System;
-using Math;
+using System.Collections.Generic;
 
 namespace InventoryLibrary
 {
@@ -18,15 +18,17 @@ namespace InventoryLibrary
         /// <summary> An optional list of strings that's the tags of the Item. </summary>
         public List<string> tags = new List<string>();
 
-        public Item(string n = "Item_Name", string describe, float cost, List<string> info)
+        /// <summary> Initializes an Item object </summary>
+        /// <param name="n"> The name of the Item. Required. </param>
+        /// <param name="describe"> The description of the Item. Optional. </param>
+        /// <param name="cost"> The price of the Item. Optional. </param>
+        /// <param name="info"> The tags of the Item. Optional. </param>
+        public Item(string n, string describe = "Unknown", float cost = 0.00f, List<string> info = null)
         {
             this.name = n;
-            if (describe)
-                this.description = describe;
-            if (cost)
-                this.price = Math.Round(cost, 2);
-            if (info)
-                this.tags = info;
+            this.description = describe;
+            this.price = (float)(Math.Truncate((double) cost * 100.0) / 100.0);
+            this.tags = info;
         }
     }
 }
