@@ -42,7 +42,8 @@ namespace InventoryLibrary
         {
             string JSONFile = @"../storage/inventory_manager.json";
             string JSONString = File.ReadAllText(JSONFile);
-            this.objects = JsonSerializer.Deserialize<Dictionary<string, object>>(JSONString);
+            if (JSONString != null && JSONString != "")
+                this.objects = JsonSerializer.Deserialize<Dictionary<string, object>>(JSONString);
         }
     }
 }
