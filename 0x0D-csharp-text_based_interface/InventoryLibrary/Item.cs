@@ -23,7 +23,7 @@ namespace InventoryLibrary
         /// <param name="describe"> The description of the Item. Optional. </param>
         /// <param name="cost"> The price of the Item. Optional. </param>
         /// <param name="info"> The tags of the Item. Optional. </param>
-        public Item(string n, string describe = "Unknown", float cost = 0.00f, List<string> info = null)
+        public Item(string n, string describe = null, float cost = 0.00f, List<string> info = null)
         {
             this.name = n;
             this.description = describe;
