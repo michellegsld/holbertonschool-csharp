@@ -6,15 +6,19 @@ namespace InventoryLibrary
     public class Inventory : BaseClass
     {
         /// <summary> The id of a User. </summary>
-        /// <value> Comes from User `id`. Required. </value>
-        public id user_id { get; set => this.User.id; }
+        public string user_id;
 
         /// <summary> The id of an Item. </summary>
-        /// <value> Comes from Item `id`. Required. </value>
-        public id item_id { get; set => this.Item.id; }
+        public string item_id;
 
         /// <summary> The amount of items in the inventory. </summary>
-        /// <value> An int defaulted to 1 and can't be less than 0. Required. </value>
-        public int quantity { get; set; }
+        public int quantity;
+
+        public Inventory(string u_id = this.User.id, string i_id = this.Item_id.id, int total = 1)
+        {
+            if (total < 1)
+                total = 1;
+            this.quantity = total;
+        }
     }
 }
