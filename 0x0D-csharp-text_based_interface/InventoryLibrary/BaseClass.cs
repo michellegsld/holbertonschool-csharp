@@ -5,16 +5,13 @@ namespace InventoryLibrary
     /// <summary> The class all other classes will inherit from. </summary>
     public class BaseClass
     {
-        /// <summary> The id of an object. </summary>
-        /// <value> A string. </value>
-        public string id { get; set; }
+        /// <summary> A string of the object's id. </summary>
+        string id;
 
-        /// <summary> The time an object was created. </summary>
-        /// <value> A DateTime. </value>
-        public DateTime date_created { get; set; }
+        /// <summary> DateTime object. The time an object was created. </summary>
+        DateTime date_created;
 
-        /// <summary> The time an object was updated. </summary>
-        /// <value> A DateTime. </value>
-        public DateTime date_updated { get; set; }
+        /// <summary> DateTime object. The time an object was updated. </summary>
+        DateTime date_updated;
     }
 }
