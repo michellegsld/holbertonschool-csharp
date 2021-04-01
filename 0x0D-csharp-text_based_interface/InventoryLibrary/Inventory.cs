@@ -18,7 +18,7 @@ namespace InventoryLibrary
         /// <param name="u_id"> The id of the User. </param>
         /// <param name="i_id"> The id of the Item. </param>
         /// <param name="total"> The amount of items in the inventory. </param>
-        public Inventory(string u_id = this.User.id, string i_id = this.Item_id.id, int total = 1)
+        public Inventory(string u_id, string i_id, int total = 1)
         {
             this.user_id = u_id;
             this.item_id = i_id;
