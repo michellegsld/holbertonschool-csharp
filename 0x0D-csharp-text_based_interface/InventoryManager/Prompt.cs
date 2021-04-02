@@ -23,13 +23,18 @@ public static class Prompt
     /// <summary> To be called upon if there are no objects of that Class. </summary>
     /// <param name="ClassName"> The ClassName given by the user. </param>
     /// <param name="Flag"> Specifies the reason why there are no objects. </param>
-    public static void ErrorClass(string ClassName, int Flag = 0)
+    public static void ErrorClass(string ClassName, int Flag)
     {
-        Console.WriteLine($"No Results.");
+        if (Flag != 2)
+            Console.WriteLine($"No Results.");
         if (Flag == 1) {
             Console.WriteLine($"There are currently no objects of type {ClassName}");
         } else if (Flag == 2) {
-        Console.WriteLine($"{ClassName} is not a valid object type");
+            Console.WriteLine($"{ClassName} is not a valid object type");
+        } else if (Flag == 3) {
+            Console.WriteLine("There are currently no objects of any ClassNames loaded in JSONStorage.");
+            Console.WriteLine("\r\nUse Create to make an object with a valid ClassName type:");
+            Console.WriteLine("- Item\r\n- User\r\n- Inventory");
         }
     }
 
