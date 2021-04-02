@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Collections.Generic;
 
 namespace InventoryLibrary
@@ -29,6 +30,20 @@ namespace InventoryLibrary
             this.description = describe;
             this.price = (float)(Math.Truncate((double) cost * 100.0) / 100.0);
             this.tags = info;
+        }
+
+        /// <summary> Organizes information about the Item object. </summary>
+        /// <returns> A string with information about this object. </returns>
+        public override string ToString()
+        {
+            string info = @"______________________________________________________
+|
+| ID: {0}    Date Created: {1}    Date Updated: {2}
+| Name: {3}    Description: {4}    Price: {5}    Tags: {6}
+|_____________________________________________________
+";
+
+            return string.Format(info, this.id, this.date_created, this.date_updated, this.name, this.description, this.price.ToString("0.00"), String.Join(", ", this.tags));
         }
     }
 }
