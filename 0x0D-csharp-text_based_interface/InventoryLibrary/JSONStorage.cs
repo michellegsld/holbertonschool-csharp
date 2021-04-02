@@ -42,10 +42,14 @@ namespace InventoryLibrary
         /// <summary> Creates `objects` based off the deserialization of the JSON file. </summary>
         public void Load()
         {
+            //Dictionary<string, List<string>> temp;
             string JSONFile = @"../storage/inventory_manager.json";
             string JSONString = File.ReadAllText(JSONFile);
-            if (JSONString != null && JSONString != "")
-                this.objects = JsonConvert.DeserializeObject<Dictionary<string, object>>(JSONString);
+            if (JSONString == null || JSONString == "")
+                return;
+
+            this.objects = JsonConvert.DeserializeObject<Dictionary<string, object>>(JSONString);
+
         }
     }
 }
