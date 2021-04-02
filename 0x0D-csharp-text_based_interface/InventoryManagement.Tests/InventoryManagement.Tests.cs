@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using InventoryLibrary;
 
 namespace InventoryManagement.Tests
@@ -110,6 +111,15 @@ namespace InventoryManagement.Tests
 
             Assert.AreEqual(inventory.quantity, 1);
             Assert.AreNotEqual(inventory.quantity, -1);
+        }
+
+        [Test]
+        public void Test_JSONStorage()
+        {
+            JSONStorage storage= new JSONStorage();
+            Dictionary<string, object> example = new Dictionary<string, object>();
+
+            Assert.AreEqual(storage.objects, example);
         }
     }
 }
