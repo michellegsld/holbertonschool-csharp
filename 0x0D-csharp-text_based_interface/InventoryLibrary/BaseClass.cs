@@ -6,7 +6,7 @@ namespace InventoryLibrary
     public class BaseClass
     {
         /// <summary> A string of the object's id. </summary>
-        public string id = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+        public string id = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Trim('=');
 
         /// <summary> DateTime object. The time an object was created. </summary>
         public DateTime date_created = new DateTime();
