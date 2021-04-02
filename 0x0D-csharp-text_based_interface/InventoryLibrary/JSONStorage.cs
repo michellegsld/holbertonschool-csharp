@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,13 +27,14 @@ namespace InventoryLibrary
         /// <param name="obj"> The new object to save into `objects`. </param>
         public void New(BaseClass obj)
         {
-            this.objects.Add(obj.GetType() + "." + obj.id, obj);
+            if (obj != null)
+                this.objects.Add(obj.GetType().Name + "." + obj.id, obj);
         }
 
         /// <summary> Saves `objects` to the JSON file in Storage after serializing. </summary>
         public void Save()
         {
-            string JSONString = JsonSerializer.Serialize(objects);
+            string JSONString = JsonConvert.SerializeObject(objects);
             string JSONFile = @"../storage/inventory_manager.json";
             File.WriteAllText(JSONFile, JSONString);
         }
@@ -43,7 +45,7 @@ namespace InventoryLibrary
             string JSONFile = @"../storage/inventory_manager.json";
             string JSONString = File.ReadAllText(JSONFile);
             if (JSONString != null && JSONString != "")
-                this.objects = JsonSerializer.Deserialize<Dictionary<string, object>>(JSONString);
+                this.objects = JsonConvert.DeserializeObject<Dictionary<string, object>>(JSONString);
         }
     }
 }
